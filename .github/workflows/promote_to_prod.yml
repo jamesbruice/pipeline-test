@@ -24,3 +24,4 @@ jobs:
         git config user.email "<>"
         git switch main
         git rebase origin/dev
+        git push
