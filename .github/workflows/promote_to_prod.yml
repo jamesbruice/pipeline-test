@@ -1,27 +1,16 @@
-# This is a basic workflow that is manually triggered
-
-name: Manual workflow
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
+name: Sync multiple branches
 on: workflow_dispatch
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  promote:
-    # The type of runner that the job will run on
+  sync-branch:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
-    - run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-        git switch main
-        git rebase origin/dev
-        git push
+      - uses: actions/checkout@master
+
+      - name: Merge dev -> main
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: dev
+          target_branch: main
+          github_token: ${{ github.token }}
