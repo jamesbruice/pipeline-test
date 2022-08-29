@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React - coolify 2
+          Learn React - coolify 3
         </a>
       </header>
     </div>
