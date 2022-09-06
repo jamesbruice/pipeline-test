@@ -16,6 +16,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React - coolify 6
+          <span>{process.env.REACT_APP_ENVIRONMENT}</span>
         </a>
       </header>
     </div>
