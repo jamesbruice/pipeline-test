@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React - coolify 8
+          Learn React - coolify 9
           <span>  - {process.env.REACT_APP_ENVIRONMENT} -</span>
         </a>
       </header>
